@@ -1,0 +1,19 @@
+server:
+  port: 7777
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  liquibase:
+    change-log: classpath:/db/liquibase-changelog.xml
+  datasource:
+    url: jdbc:tc:postgresql:13.1:///
+    username: postgres
+    password: postgres
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    open-in-view: false
+expirationTimeMinutes: 3

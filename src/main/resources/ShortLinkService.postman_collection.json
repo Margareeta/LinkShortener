@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "34404f81-426a-4c5b-a12a-fde1eaf2a80f",
+		"name": "ShortLinkService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetShortLink",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "https://github.com/Margareeta/NordCodesTest/blob/feature/shortlink/src/main/java/org/daisy/service/ShortLinkServiceImpl.java"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/short-link",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"short-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBrokenShortLink",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "https://github.com/Margareeta/NordCodesTest/blob/feature/shortlink/sc/main/java/org/daisy/service/ShortLinkServiceImpl.java"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/short-link",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"short-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Redirect",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/gi.ub-474499505",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"gi.ub-474499505"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByShortLink",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/gi.ub-474499505",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"gi.ub-474499505"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAnalutics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/analytics/gi.ub-474499505",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"analytics",
+						"gi.ub-474499505"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api/v1",
+			"type": "default"
+		}
+	]
+}

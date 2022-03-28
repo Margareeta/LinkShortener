@@ -1,0 +1,86 @@
+openapi: 3.0.2
+info:
+  description: An application for shortening links, redirecting to the original links and
+  providing redirection statistics
+  version: 1.0.0
+  title: NordCodeTest
+  contact:
+    email: la.reine.m@gmail.com
+servers: 
+  - url: http://localhost:8080/api/v1
+tags:
+  - name: LinkController
+    description: creates and deltes short links, redirects to the original links, provides statistics of 
+paths:
+  /shortlink:
+    post:
+      tags:
+        - LinkController
+      summary: shortens the original link
+      description: creates a shortened link by the original one 
+      requestBody:
+        content:
+          text:
+            schema: 
+              type: string
+              description: full link
+              example: google.com
+      responses:    
+       '200':
+          description: OK
+          content:
+            text:
+             schema: 
+               type: string
+               description: short link
+               example: go.le933747933
+  /{shortLink}:
+      parameters:
+        - name: shortLink
+          in: path
+          description: shortened link
+          required: true
+          schema:
+            type: string
+            description: short link
+            example: go.le933747933  
+      get:
+        tags:
+          - LinkController
+        summary: redirects from the short link to the original one
+        description: redirects from the short link to the original one
+        responses:
+          '200':
+            description: OK
+          '400':
+            description: bad request
+          '404':
+            description: not found
+      delete:
+        tags:
+          - LinkController
+        summary: deletes an espired or invalid short link
+        description: deletes an espired or invalid short link
+        responses:
+          '200':
+            description: OK
+  /analytics/{shortLink}:
+    parameters:
+      - name: shortLink
+        in: path
+        description: shortened link
+        required: true
+        schema:
+          type: string
+          description: short link
+          example: go.le933747933  
+    get:
+      tags:
+        - LinkController
+      summary: provides statistics of clics on a shortened link
+      description: provides statistics of clics on a shortened link within its lifecycle
+      responses:
+        '200':
+          description: OK
+        '404':
+            description: not found
