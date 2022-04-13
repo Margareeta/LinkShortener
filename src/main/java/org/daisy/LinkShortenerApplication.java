@@ -9,3 +9,7 @@ public class LinkShortenerApplication {
         SpringApplication.run(LinkShortenerApplication.class);
     }
 }
+//TODO: read volumes
+//TODO: spring-boot-profiles and modules
+//TODO: revise functional interfaces
+

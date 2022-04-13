@@ -2,6 +2,8 @@ package org.daisy.service;
 
 import lombok.SneakyThrows;
 import org.daisy.dto.LinkEntityDto;
+import org.daisy.exception.LinkNotFoundException;
+import org.daisy.exception.NotWorkingLinkException;
 import org.daisy.model.LinkEntity;
 import org.daisy.repository.LinkShortenerRepositiory;
 import org.junit.jupiter.api.AfterEach;
@@ -18,6 +20,7 @@ class LinkShortenerServiceImplTest extends BaseIntegrationTest {
     private final LinkShortenerService service;
     private final LinkShortenerRepositiory repository;
     private static final String fullLink = "https://github.com/Margareeta/NordCodesTest";
+    private static final String brokenLink = "https://github.com/Margareeta/NordCest";
 
     @Autowired
     public LinkShortenerServiceImplTest(LinkShortenerService service, LinkShortenerRepositiory repositiory) {
@@ -76,6 +79,11 @@ class LinkShortenerServiceImplTest extends BaseIntegrationTest {
         Assertions.assertEquals(5, linkEntityDto.getCounter());
     }
 
+    @Test
+    void shouldThrowExceptionWithBrockenLink(){
+        Assertions.assertThrows(NotWorkingLinkException.class,() -> service.createShortLink(brokenLink));
+    }
+
     private LinkEntity createLinkEntity() {
         return LinkEntity.builder()
                 .shortLink(service.createShortLink(fullLink))
@@ -84,5 +92,4 @@ class LinkShortenerServiceImplTest extends BaseIntegrationTest {
                 .counter(new AtomicLong(0))
                 .build();
     }
-    //TODO: test with broken link
 }

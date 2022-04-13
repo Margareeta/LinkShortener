@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/links_db

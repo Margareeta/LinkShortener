@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    image: 'link_shortener-spring-boot-postgres:latest'
+    build: .
+    container_name: link_shortener
+    depends_on:
+      - postgres
+    ports:
+      - 8888:8888
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+
+  postgres:
+    image: 'postgres:13.1-alpine'
+    container_name: postgres_for_link_shortener
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=111
+      - POSTGRES_DB=links_db
+    ports:
+      - 5432:5432
