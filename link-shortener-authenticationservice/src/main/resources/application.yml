@@ -1,0 +1,12 @@
+server:
+  port: 9999
+spring:
+  liquibase:
+    change-log: classpath:/db/liquibase-changelog.xml
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      fromat-sql: true
+      ddl-auto: none
+      open-session-in-view: false

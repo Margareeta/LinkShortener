@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  app:
+  baseservice:
     image: 'link_shortener-spring-boot-postgres:latest'
-    build: .
+    build: link-shortener-base/
     container_name: link_shortener
     depends_on:
       - postgres
@@ -11,6 +11,18 @@ services:
       - 8888:8888
     environment:
       - "SPRING_PROFILES_ACTIVE=docker"
+    restart: always
+
+  authenticationservice:
+    image: 'authenticationservice:latest'
+    build: link-shortener-authenticationservice/
+    depends_on:
+      - postgres
+    ports:
+      - 9999:9999
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
+    restart: always
 
   postgres:
     image: 'postgres:13.1-alpine'
@@ -21,3 +33,4 @@ services:
       - POSTGRES_DB=links_db
     ports:
       - 5432:5432
+    restart: always
