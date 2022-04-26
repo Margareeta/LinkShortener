@@ -1,6 +1,7 @@
-package org.margareeta.linkshortener.baseservice.model;
+package org.margareeta.linkshortener.common.model;
 
 import lombok.*;
+import org.margareeta.linkshortener.common.converter.AtomicLongConverter;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,7 +1,7 @@
 package org.margareeta.linkshortener.baseservice.converter;
 
 import org.margareeta.linkshortener.baseservice.dto.LinkEntityDto;
-import org.margareeta.linkshortener.baseservice.model.LinkEntity;
+import org.margareeta.linkshortener.common.model.LinkEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

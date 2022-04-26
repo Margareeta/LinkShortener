@@ -6,7 +6,7 @@ services:
     build: link-shortener-base/
     container_name: link_shortener
     depends_on:
-      - postgres
+      - authenticationservice
     ports:
       - 8888:8888
     environment:

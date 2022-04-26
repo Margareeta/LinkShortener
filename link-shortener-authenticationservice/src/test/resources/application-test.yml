@@ -4,3 +4,4 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+

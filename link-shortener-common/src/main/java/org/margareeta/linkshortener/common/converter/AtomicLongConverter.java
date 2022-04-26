@@ -1,4 +1,4 @@
-package org.margareeta.linkshortener.baseservice.model;
+package org.margareeta.linkshortener.common.converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

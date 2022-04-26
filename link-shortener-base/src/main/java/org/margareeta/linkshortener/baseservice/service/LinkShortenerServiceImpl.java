@@ -7,8 +7,9 @@ import org.margareeta.linkshortener.baseservice.dto.LinkEntityDto;
 import org.margareeta.linkshortener.baseservice.exception.ExpiredLinkException;
 import org.margareeta.linkshortener.baseservice.exception.LinkNotFoundException;
 import org.margareeta.linkshortener.baseservice.exception.NotWorkingLinkException;
-import org.margareeta.linkshortener.baseservice.model.LinkEntity;
-import org.margareeta.linkshortener.baseservice.repository.LinkShortenerRepositiory;
+
+import org.margareeta.linkshortener.common.model.LinkEntity;
+import org.margareeta.linkshortener.common.repository.LinkShortenerRepositiory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;

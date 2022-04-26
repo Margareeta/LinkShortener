@@ -3,11 +3,11 @@ package org.margareeta.linkshortener.baseservice.service;
 import lombok.SneakyThrows;
 import org.margareeta.linkshortener.baseservice.dto.LinkEntityDto;
 import org.margareeta.linkshortener.baseservice.exception.NotWorkingLinkException;
-import org.margareeta.linkshortener.baseservice.model.LinkEntity;
-import org.margareeta.linkshortener.baseservice.repository.LinkShortenerRepositiory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.margareeta.linkshortener.common.model.LinkEntity;
+import org.margareeta.linkshortener.common.repository.LinkShortenerRepositiory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mock.web.MockHttpServletResponse;
 
@@ -22,9 +22,9 @@ class LinkShortenerServiceImplTest extends BaseIntegrationTest {
     private static final String brokenLink = "https://github.com/Margareeta/NordCest";
 
     @Autowired
-    public LinkShortenerServiceImplTest(LinkShortenerService service, LinkShortenerRepositiory repositiory) {
+    public LinkShortenerServiceImplTest(LinkShortenerService service, LinkShortenerRepositiory repository) {
         this.service = service;
-        this.repository = repositiory;
+        this.repository = repository;
     }
 
     @AfterEach
