@@ -1,4 +1,4 @@
-package org.margareeta.linkshortener.authenticationservice.service;
+package org.margareeta.linkshortener.authenticationservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +18,7 @@ public class AppUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return  appUserRepository.findById(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return  appUserRepository.findById(username).orElseThrow(() ->
+                new UsernameNotFoundException("User not found"));
     }
 }

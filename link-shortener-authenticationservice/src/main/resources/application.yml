@@ -10,3 +10,5 @@ spring:
       ddl-auto: none
     format-sql: true
     open-session-in-view: false
+jwtExpirationMinutes: 1
+secretKey: -KaPdSgVkYp3s5v8y/B?E(H+-KaPdSgVkYp3s5v8y/B?E(H+MbQeThWm
