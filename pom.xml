@@ -25,6 +25,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <modelmapper.version>2.4.0</modelmapper.version>
         <testcontainers.version>1.16.0</testcontainers.version>
+        <io.jsonwebtoken.version>0.10.7</io.jsonwebtoken.version>
     </properties>
 
     <dependencies>
@@ -110,22 +111,9 @@
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
-            <version>0.10.7</version>
+            <version>${io.jsonwebtoken.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>0.10.7</version>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>0.10.7</version>
-            <scope>runtime</scope>
-        </dependency>
 
     </dependencies>
 </project>

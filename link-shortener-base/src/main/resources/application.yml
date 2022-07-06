@@ -11,3 +11,4 @@ spring:
     format-sql: true
     open-session-in-view: false
 expirationTimeMinutes: 3
+secretKey: -KaPdSgVkYp3s5v8y/B?E(H+-KaPdSgVkYp3s5v8y/B?E(H+MbQeThWm
