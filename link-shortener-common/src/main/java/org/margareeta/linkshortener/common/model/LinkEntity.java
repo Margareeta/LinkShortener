@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)

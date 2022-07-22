@@ -1,9 +1,6 @@
 package org.margareeta.linkshortener.common.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.margareeta.linkshortener.common.model.role.AppUserRole;
 import org.margareeta.linkshortener.common.repository.AppUserRepository;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,13 +18,21 @@ import java.util.*;
 @Table(name = "app_user")
 public class AppUser implements UserDetails {
     @Id
-    @Column(name = "username")//
+    @Column(name = "username")
+    @Getter
+    @Setter
     private String username;
-    @Column(name = "password")//
+    @Column(name = "password")
+    @Getter
+    @Setter
     private String password;
-    @Column(name = "first_name")//
+    @Column(name = "first_name")
+    @Getter
+    @Setter
     private String firstName;
-    @Column(name = "last_name")//
+    @Column(name = "last_name")
+    @Getter
+    @Setter
     private String lastName;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -36,11 +41,17 @@ public class AppUser implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<AppUserRole> roles;
+    @Getter
+    @Setter
     @Column(name = "is_account_non_expired")//
     private boolean isAccountNonExpired;
+    @Getter
+    @Setter
     @Column(name = "is_account_non_locked")//
     private boolean isAccountNonLocked;
     @Column(name = "is_credentials_non_expired")//
+    @Getter
+    @Setter
     private boolean isCredentialsNonExpired;
     @Column(name = "is_enabled")//
     private boolean isEnabled;
