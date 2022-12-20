@@ -21,9 +21,10 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
-@RequiredArgsConstructor
+
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class LinkShortenerServiceImpl implements LinkShortenerService {
     private final LinkShortenerRepositiory repository;
     private final LinkEntityDtoConverter converter;

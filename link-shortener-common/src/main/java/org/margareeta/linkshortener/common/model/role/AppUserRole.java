@@ -16,6 +16,8 @@ import javax.persistence.Table;
 public class AppUserRole {
 
     @EmbeddedId
+    @Getter
+    @Setter
     private RolePK rolePk;
     @Column(name = "description")
     private String description;

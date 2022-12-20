@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicLong;
 class LinkShortenerServiceImplTest extends BaseIntegrationTest {
     private final LinkShortenerService service;
     private final LinkShortenerRepositiory repository;
-    private static final String fullLink = "https://github.com/Margareeta/NordCodesTest";
+    private static final String fullLink = "https://github.com/Margareeta";
     private static final String brokenLink = "https://github.com/Margareeta/NordCest";
 
     @Autowired
